@@ -5,6 +5,11 @@
 *::-webkit-scrollbar {
     display: none;
 }
+
+#nav {
+    position: fixed;
+    
+}
 header ul {
     display: flex;
     flex-direction: column;
@@ -26,9 +31,10 @@ header ul li a {
     width: 24px;
     height: 96px;
     left: 100px;
+    
 }
-#bar::before { content: "▶︎"; }
-#bar:hover:before { content: "◀︎"; }
+/*#bar::before { content: "▶︎"; }
+#bar:hover:before { content: "◀︎"; }*/
 h1 {
     background-color: aqua;
 }
@@ -36,42 +42,46 @@ h1 {
 .usertable {
     margin: 10vw;
     width: 80vw;
-    background-color: navy;
-    color: rgb(200,200,200);
+    background: linear-gradient(navy, black );
+    color: white;
     opacity: 1;
     animation: flash 20s linear infinite;
     border: solid;
     font-weight: bold;
 }
-
+.usertable tr {
+    height: 2em;
+}
 .usertable tr td {
     border: dotted;
     width: 20vw;
     text-align: center;
+    transition: .5s;
 }
 
 .center_line {
     text-align: center;
-
+}
+.hover {
+    cursor: pointer;
+    background-color: white;
+    color: blue;
+    transform: scale(1.1)
+}
+.set_row_color {
+    background-color: rgba(255, 0, 0, .5);
+    color: white;
 }
 
 @keyframes flash {
-    0%,50%,100%{
-        opacity: .8;
-    }
-    33% {
-        background-color: rgb(181 ,255,20);
-        color: black;
+    30%,60% { opacity: .8; }
+    0%,100% {
+        background: linear-gradient(navy, black );
         opacity: 1;
     }
-    66% {
-        background-color: rgb(246 ,209,205);
-        color: black;
+    50% {
+        background: linear-gradient(black, navy);
         opacity: 1;
     }
-    100% {
-        background-color: navy;
-        color: rgb(200,200,200);
-        opacity: 1;
-    }
+    
 }
